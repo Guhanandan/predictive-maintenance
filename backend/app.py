@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 # Load trained model
 model = joblib.load("models/predictive_model.pkl")
 
