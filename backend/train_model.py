@@ -5,11 +5,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# Load dataset (Simulated logs: CPU usage, Memory usage, Response time, Error count)
+# Load dataset (Simulated logs: CPU usage, Memory usage, Response time, Error count, Disk Usage, Network Latency)
 df = pd.read_csv("dataset/software_logs.csv")  
 
 # Feature selection
-X = df[['cpu_usage', 'memory_usage', 'response_time', 'error_count']]
+X = df[['cpu_usage', 'memory_usage', 'response_time', 'error_count', 'disk_usage', 'network_latency']]
 y = df['failure']  # 1 for failure, 0 for normal
 
 # Split data
